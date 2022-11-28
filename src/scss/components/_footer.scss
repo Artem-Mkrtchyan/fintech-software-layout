@@ -1,0 +1,85 @@
+.footer {
+  padding: 68px 0 78px;
+  border-top: 1px solid $colorBlue;
+
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(100px, 424px) minmax(100px, 400px) minmax(100px, 253px);
+    align-items: flex-start;
+    column-gap: 49px;
+
+    @include mobile-desktop {
+      grid-template-columns: minmax(100px, 1fr) minmax(100px, 253px);
+      row-gap: 30px;
+      column-gap: 62px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile-desktop {
+      grid-column: 1/-1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__decs {
+    font-size: 24px;
+    line-height: 1.25em;
+    font-weight: 600;
+
+    @include table {
+      font-size: 19px;
+
+    }
+  }
+
+  &__year,
+  &__address {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  &__address {
+    @include table {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  justify-content: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

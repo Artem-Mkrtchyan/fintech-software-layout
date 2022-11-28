@@ -1,0 +1,109 @@
+.hero {
+  flex-basis: 720px;
+  padding: 65px 0;
+  color: $colorBlue;
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    row-gap: 21px;
+    max-width: 520px;
+
+    @include table {
+      max-width: 356px;
+    }
+
+    @include mobile {
+      max-width: 268px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.25em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include table {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $colorBlue;
+    }
+  }
+
+  &__title--yellow {
+    color: $colorYellow;
+  }
+
+  &__ellipse {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      margin-right: .4375em;
+      width: 3.7916em;
+      height: .7916em;
+      border: .0833em solid $colorYellow;
+      border-radius: 21px;
+    }
+
+    &::after {
+      content: '.';
+      color: $colorYellow;
+    }
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 1.5em;
+
+    @include table {
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    background-color: $colorYellow;
+    color: $colorBlue;
+    transition-property: color, background-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      color: $colorYellow;
+      background-color: $colorBlue;
+    }
+
+    &:active {
+      background-color: $colorDarkBlue;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+.info {
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+
+  @include mobile-desktop {
+    padding: 80px 0;
+  }
+
+  &__glow-blur {
+    top: 0;
+    left: 85%;
+    transform: translate(-75px, -44px);
+
+    @include mobile-desktop {
+      content: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 93px;
+
+    @include mobile-desktop {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      gap: 60px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  padding: 33px;
+  flex-basis: 489px;
+  border: 1px solid $colorBlue;
+  border-radius: 16px;
+
+  @include mobile-desktop {
+    flex-shrink: 1;
+    flex-basis: 600px;
+  }
+
+  &__img {
+    border-radius: 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: -0.02em;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    line-height: 1.28em;
+    letter-spacing: 0.02em;
+  }
+}
+
+.process {
+  flex-basis: 618px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 90px;
+
+  &__item {
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    grid-template-columns: minmax(280px, 330px) minmax(230px, 280px);
+
+    @include mobile {
+      grid-template-columns: minmax(260px, 340px);
+      justify-items: start;
+      row-gap: 32px;
+    }
+
+    &:first-child {
+      @include mobile {
+        max-width: 260px;
+      }
+    }
+
+    &:nth-child(2n) {
+      align-self: flex-start;
+
+      .process__item-image {
+        order: 2;
+        justify-self: start;
+        margin-right: 0;
+        margin-left: 28px;
+
+        @include mobile {
+          order: 0;
+          margin-left: 0;
+        }
+      }
+
+      .process__content {
+        border-left: none;
+        border-right: 2px solid $colorDarkBlue;
+        text-align: right;
+
+        @include mobile {
+          border-right: none;
+          text-align: left;
+
+          &::before {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__item-image {
+    margin-right: 28px;
+
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    padding: 0 10px;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 14px;
+    border-left: 2px solid $colorDarkBlue;
+
+    @include mobile {
+      border-left: none;
+      padding: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: 0;
+        width: 150%;
+        height: 2px;
+        background-color: $colorDarkBlue;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: $colorBlack;
+  }
+
+  &__descr {
+    line-height: 1.428em;
+    letter-spacing: 0.02em;
+  }
+}

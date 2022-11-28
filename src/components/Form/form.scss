@@ -1,0 +1,202 @@
+.feedback {
+  position: relative;
+  padding: 35px 0 160px;
+
+  &__glow-blur {
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(200px, 590px) minmax(303px, 1fr);
+    row-gap: 48px;
+    column-gap: 42px;
+
+    @include mobile-desktop {
+      row-gap: 40px;
+    }
+
+    @include table-small {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 1.26em;
+    letter-spacing: -0.03em;
+    color: $colorBlue;
+
+    @include mobile-desktop {
+      font-size: 66px;
+    }
+    @include table-small {
+      font-size: 40px;
+    }
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+
+  &__title-ellipse {
+    display: inline-block;
+    margin: 0 9px;
+    width: 1.74em;
+    height: .55em;
+    border: .1em solid currentColor;
+    border-radius: 138px;
+
+    @include mobile-desktop {
+      margin: 0;
+    }
+  }
+
+  &__descr {
+    max-width: 303px;
+    padding-top: 68px;
+    font-size: 24px;
+    line-height: 1.17em;
+    text-align: right;
+
+    @include table-small {
+      text-align: center;
+      justify-self: center;
+    }
+  }
+}
+
+.form-feedback {
+  display: flex;
+  row-gap: 24px;
+  column-gap: 14px;
+  flex-wrap: wrap;
+  flex-basis: 590px;
+  font-family: Inter;
+  color: $colorBlue;
+
+  @include table {
+    justify-content: center;
+  }
+
+  &__input-wpar {
+    position: relative;
+    flex: 1 1 40%;
+
+    @include table {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    padding: 4px;
+    background-color: $colorGrey;
+    font-size: 13px;
+    line-height: 15px;
+
+    letter-spacing: 0.02em;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid $colorBlue;
+    border-radius: 12px;
+    background-color: transparent;
+    outline: none;
+    transition: border-color .2s ease-in-out;
+
+    &:focus {
+      border-color: $colorYellow;
+    }
+  }
+
+  &__textarea {
+    padding: 16px;
+    flex: 1 1 100%;
+    min-height: 137px;
+    border: 1px solid $colorBlue;
+    border-radius: 12px;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+
+    &::placeholder {
+      color: currentColor;
+    }
+
+    &:focus {
+      border-color: $colorYellow;
+    }
+  }
+
+  &__button-wrap {
+    position: relative;
+    flex-basis: 302px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  &__btn-submit {
+    min-height: 60px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: $colorYellow;
+    background-color: $colorBlue;
+  }
+
+  &__input-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked~.form-feedback__label-checkbox::after {
+      opacity: 1;
+    }
+  }
+
+  &__label-checkbox {
+    position: relative;
+    align-self: center;
+    padding-left: 21px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+    }
+
+    &::before {
+      left: 0;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+
+    &::after {
+      left: 8px;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background-color: $colorBlue;
+      opacity: 0;
+    }
+  }
+}

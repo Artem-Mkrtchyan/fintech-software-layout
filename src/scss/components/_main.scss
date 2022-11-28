@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+@import "../../components/Hero/hero.scss";
+@import "../../components/Info/info.scss";
+@import "../../components/Services/services.scss";
+@import "../../components/Form/form.scss";

@@ -1,0 +1,93 @@
+.services {
+  position: relative;
+  padding: 135px 0;
+  color: $colorBlue;
+  background-image: url('../img/bgSservice.svg');
+  background-position: 46% 10%;
+  background-repeat: no-repeat;
+
+
+  &__title-wrap {
+    padding: 0 27px;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 44px;
+    line-height: 1.25em;
+    letter-spacing: -0.02em;
+
+    @include table {
+      font-size: 32px;
+    }
+
+    @include table {
+      font-size: 24px;
+    }
+  }
+
+  &__desct {
+    max-width: 430px;
+    font-size: 16px;
+    line-height: 1.25em;
+    letter-spacing: 0.01em;
+
+    @include table {
+      font-size: 14px;
+    }
+  }
+}
+
+.card-services {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  column-gap: 18px;
+  row-gap: 40px;
+
+  @include mobile-desktop {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    flex: 1 1 32%;
+    display: flex;
+    padding: 28px;
+    flex-direction: column;
+    row-gap: 18px;
+    border: 1px solid $colorBlue;
+    border-radius: 36px;
+
+    @include mobile-desktop {
+      flex: 0 1 600px;
+    }
+  }
+
+  &__img {
+    max-height: 190px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25em;
+    letter-spacing: 0.03em;
+  }
+}
+
+.card-list {
+  padding-left: 28px;
+  list-style-type: disc;
+
+  &__item {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: 0.02em;
+  }
+}
