@@ -1,15 +1,20 @@
 {
-  "name": "gulp-2022",
+  "name": "fintech-software-layout",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "type": "module",
+  "homepage": "https://artem-mkrtchyan.github.io/fintech-software-layout/",
+  "keywords": [
+    "gulp, scss, html"
+  ],
+  "author": "Mkrtchyan Artem <mkr2263@yandex.ru>",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
-    "svgSprive": "gulp svgSprive"
+    "svgSprive": "gulp svgSprive",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "author": "Artem Mkrtchyan",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.27.9",
